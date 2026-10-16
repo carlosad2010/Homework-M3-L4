@@ -1,0 +1,479 @@
+/* Estilos compartidos por todas las lecciones. No necesitas tocarlos. */
+:root {
+  --fondo: #f6f7fb;
+  --tarjeta: #ffffff;
+  --texto: #1d2433;
+  --suave: #5b6478;
+  --borde: #dfe3ec;
+  --primario: #3b5bdb;
+  --exito: #2b8a3e;
+  --error: #c92a2a;
+  --aviso: #e67700;
+  --codigo: #0f172a;
+  --codigo-texto: #e2e8f0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.55;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+h1 { margin-bottom: 4px; }
+h2 { margin-top: 40px; border-bottom: 2px solid var(--borde); padding-bottom: 6px; }
+.subtitulo { color: var(--suave); margin-top: 0; }
+
+.tarjeta {
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 16px 0;
+}
+
+.idea {
+  border-left: 5px solid var(--primario);
+  background: #eef2ff;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 16px 0;
+}
+
+.cuidado {
+  border-left: 5px solid var(--aviso);
+  background: #fff4e6;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin: 16px 0;
+}
+
+.reto {
+  border: 2px dashed var(--exito);
+  background: #ebfbee;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+pre, code { font-family: Consolas, "Cascadia Code", monospace; font-size: 0.92em; }
+pre.codigo {
+  background: var(--codigo);
+  color: var(--codigo-texto);
+  padding: 14px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+:not(pre) > code { background: #e9ecf5; padding: 1px 5px; border-radius: 4px; }
+
+button {
+  font: inherit;
+  padding: 8px 14px;
+  margin: 4px 6px 4px 0;
+  border-radius: 6px;
+  border: 1px solid var(--primario);
+  background: var(--primario);
+  color: #fff;
+  cursor: pointer;
+}
+button.secundario { background: #fff; color: var(--primario); }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+input {
+  font: inherit;
+  padding: 7px 10px;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+}
+
+/* Panel donde las lecciones escriben resultados */
+#salida, .salida {
+  background: #111827;
+  color: #a7f3d0;
+  min-height: 80px;
+  padding: 12px;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  font-family: Consolas, monospace;
+  font-size: 0.9em;
+}
+
+/* Etiquetas de estado */
+.estado { display: inline-block; padding: 4px 10px; border-radius: 999px; font-weight: 600; }
+.estado.idle    { background: #e9ecef; color: #495057; }
+.estado.loading { background: #fff3bf; color: #8a6100; }
+.estado.success { background: #d3f9d8; color: var(--exito); }
+.estado.error   { background: #ffe3e3; color: var(--error); }
+
+details { margin: 10px 0; }
+summary { cursor: pointer; font-weight: 600; color: var(--primario); }
+
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid var(--borde); padding: 6px 10px; text-align: left; }
+
+nav.pie { margin-top: 48px; display: flex; justify-content: space-between; }
+nav.pie a { color: var(--primario); font-weight: 600; text-decoration: none; }
+
+/* Buscador de tareas */
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(191, 219, 254, 0.52), transparent 48%),
+    #f5f7fc;
+  color: #17233b;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+.app-shell {
+  width: min(100% - 40px, 680px);
+  margin: 0 auto;
+  padding: clamp(64px, 12vh, 112px) 0 72px;
+}
+
+.app-heading {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.app-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 18px;
+  color: #52627e;
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22b889;
+  box-shadow: 0 0 0 4px rgba(34, 184, 137, 0.12);
+}
+
+.app-heading h1 {
+  margin: 0;
+  color: #17233b;
+  font-size: clamp(2.25rem, 7vw, 3.35rem);
+  font-weight: 760;
+  letter-spacing: -0.055em;
+  line-height: 1.08;
+}
+
+.app-heading > p {
+  max-width: 430px;
+  margin: 15px auto 0;
+  color: #71809a;
+  font-size: 1.02rem;
+}
+
+.search-panel {
+  padding: clamp(22px, 5vw, 32px);
+  border: 1px solid rgba(222, 229, 241, 0.9);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 20px 55px rgba(40, 58, 94, 0.08), 0 2px 8px rgba(40, 58, 94, 0.04);
+}
+
+.search-panel label {
+  display: block;
+  margin-bottom: 10px;
+  color: #263651;
+  font-size: 0.9rem;
+  font-weight: 680;
+}
+
+.search-controls {
+  display: flex;
+  gap: 12px;
+}
+
+.search-controls input {
+  width: 100%;
+  min-width: 0;
+  height: 54px;
+  padding: 0 16px;
+  border: 1px solid #dce3ef;
+  border-radius: 11px;
+  background: #fbfcff;
+  color: #17233b;
+  font: inherit;
+  transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.search-controls input::placeholder {
+  color: #a0abc0;
+  font-size: 12px;
+}
+
+.search-controls input:focus {
+  border-color: #6383f4;
+  outline: 0;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(99, 131, 244, 0.15);
+}
+
+.search-controls button,
+#retry-btn {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 54px;
+  margin: 0;
+  padding: 0 19px;
+  border: 0;
+  border-radius: 11px;
+  background: #4f6ef7;
+  color: #fff;
+  font: inherit;
+  font-size: 0.93rem;
+  font-weight: 680;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(79, 110, 247, 0.2);
+  transition: background 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+.search-controls button:hover,
+#retry-btn:hover {
+  transform: translateY(-1px);
+  background: #3f5fe8;
+  box-shadow: 0 9px 18px rgba(79, 110, 247, 0.26);
+}
+
+.search-controls button:focus-visible,
+#retry-btn:focus-visible {
+  outline: 3px solid rgba(79, 110, 247, 0.3);
+  outline-offset: 3px;
+}
+
+.button-arrow {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.input-hint {
+  margin: 10px 0 0;
+  color: #8995aa;
+  font-size: 0.82rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+  color: #71809a;
+  font-size: 0.92rem;
+}
+
+.loading p {
+  margin: 0;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #dbe3ff;
+  border-top-color: #4f6ef7;
+  border-radius: 50%;
+  animation: spin 700ms linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.content {
+  margin-top: 24px;
+}
+
+.data-card {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 26px 28px;
+  border: 1px solid #dfe7f4;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 12px 32px rgba(40, 58, 94, 0.06);
+  animation: card-appear 260ms ease both;
+}
+
+.pokemon-art {
+  display: grid;
+  flex: 0 0 150px;
+  width: 150px;
+  height: 150px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 14px;
+  background: radial-gradient(circle, #fff 18%, #edf2ff 100%);
+}
+
+.pokemon-artwork {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pokemon-details {
+  min-width: 0;
+}
+
+.pokemon-number {
+  display: inline-block;
+  margin-bottom: 6px;
+  color: #8794ac;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.data-card h2 {
+  margin: 0 0 8px;
+  padding: 0;
+  border: 0;
+  color: #1c2b48;
+  font-size: 1.22rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.data-card p {
+  margin: 0;
+  color: #71809a;
+  line-height: 1.75;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid #f4d9d7;
+  border-radius: 14px;
+  background: #fff8f7;
+}
+
+.error-icon {
+  display: grid;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffe5e1;
+  color: #cf554b;
+  font-weight: 750;
+}
+
+.error-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.error-copy h2 {
+  margin: 0 0 3px;
+  padding: 0;
+  border: 0;
+  color: #763d3a;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.error-copy p {
+  margin: 0;
+  color: #986b67;
+  font-size: 0.86rem;
+}
+
+#retry-btn {
+  min-height: 40px;
+  padding: 0 13px;
+  background: #fff;
+  color: #bd5149;
+  font-size: 0.83rem;
+  box-shadow: inset 0 0 0 1px #edc7c3;
+}
+
+#retry-btn:hover {
+  background: #fff0ee;
+  box-shadow: inset 0 0 0 1px #e9b3ad;
+}
+
+@keyframes card-appear {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 520px) {
+  .app-shell {
+    width: min(100% - 28px, 680px);
+    padding-top: 56px;
+  }
+
+  .search-controls {
+    flex-direction: column;
+  }
+
+  .search-controls button {
+    width: 100%;
+  }
+
+  .error {
+    flex-wrap: wrap;
+  }
+
+  .data-card {
+    flex-direction: column;
+    gap: 18px;
+    padding: 22px;
+    text-align: center;
+  }
+
+  .pokemon-art {
+    flex-basis: 170px;
+    width: 170px;
+    height: 170px;
+  }
+
+  #retry-btn {
+    width: 100%;
+    margin-left: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
