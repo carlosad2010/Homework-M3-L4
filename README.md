@@ -1,4 +1,7 @@
 # Buscador de Rick & Morty
+## Demo en línea
+
+Prueba la aplicación publicada en GitHub Pages: [Buscador de Rick & Morty](https://carlosad2010.github.io/Homework-M3-L4/).
 
 Tarjeta de perfil de un personaje de la serie *Rick and Morty*, pensada para mostrarse antes de empezar a chatear. Consume la [Rick and Morty API](https://rickandmortyapi.com/) y recorre el ciclo completo: documentación → endpoint → URL → JSON → ViewModel → render.
 
